@@ -1,0 +1,206 @@
+/* if you are using any Google fonts change the font names below to your fonts. 
+Any spaces in your font name should be replaced with a +. 
+Fonts are separated by a | */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto+Slab:wght@600&display=swap');
+
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #396CAB;
+  --secondary-color: #14374D;
+  --base-color: #FFFBFE;
+  --accent1-color: #978263;
+  --accent2-color: #624d38;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "Roboto Slab";
+  --paragraph-font: "Raleway";
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: #14374D; /* headlines on a white background */ 
+  --headline-color-on-color: #FFFFFF; /* headlines on a colored background */ 
+  --paragraph-color-on-white: #14374D; /* paragraph text on a white background */ 
+  --paragraph-color-on-color: #FFFFFF; /* paragraph text on a colored background */ 
+  --text-background-color: #978263;
+  --nav-link-color: #FFFBFE;
+  --nav-background-color: #396CAB;
+  --nav-hover-link-color: #FFFFFF;
+  --nav-hover-background-color: #14374D;
+}
+
+
+/*  Look around below...but DON'T CHANGE ANYTHING! */
+html {
+  background-color: var(--primary-color);
+}
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1em;
+}
+img {
+  max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 900;
+  color: var(--headline-color-on-white);
+}
+header {
+  padding: 1em;
+  text-align: center;
+  color: var(--paragraph-color-on-color);
+  background-color: var(--text-background-color);
+}
+header > h1, header > h2 {
+  color: var(--headline-color-on-color);
+}
+
+#siteplan {
+  background: rgb(20,55,77);
+  background: linear-gradient(117deg, rgba(20,55,77,1) 0%, rgba(55,105,165,1) 50%, rgba(20,55,77,1) 100%);;
+  box-shadow: 0px 6px 8px 0 #484848, 0px 8px 20px 0 #BEBEBE;
+}
+
+p {
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color);
+  padding: 1em;
+  letter-spacing: 0.04em;
+  line-height: 1.2em;
+}
+
+.colors {
+  width: 100%;
+  min-width: 350px;
+  margin: auto;
+  text-align: center;
+}
+.colors th {
+  background-color: #999;
+}
+.colors td{
+  width: 25%;
+  height: 3em;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.accent1 {
+  background-color: var(--accent1-color);
+}
+.accent2{
+  background-color: var(--accent2-color);
+}
+
+p.colored {
+  background-color: var(--text-background-color);
+  color: var(--paragraph-color-on-color);
+  padding: 2em;
+}
+
+nav {
+  background-color: var(--nav-background-color);
+  line-height: 3em;
+  text-align: center;
+  font-size: 1.2em;
+}
+nav > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 6px 8px 0 #484848, 0px 8px 20px 0 #BEBEBE;
+}
+
+nav ul li {
+  padding-left:1em;
+  padding-right: 1em;
+}
+
+nav ul li a {
+  position: relative;
+  padding: 2px;
+  min-width: 70px;
+  text-decoration: none;
+  font-family: var(--heading-font);
+  font-weight: bold;
+}
+
+nav ul li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFF;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover:before {
+    visibility: visible;
+  transform: scaleX(1);
+}
+
+nav a:link, nav a:visited {
+  color: var(--nav-link-color);
+}
+nav ul li:hover {
+  color: var(--nav-hover-link-color);
+  background-color: var(--nav-hover-background-color);
+}
+
+.sitemap {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(6, 15%);
+  grid-template-rows: 3em 1.5em 1.5em 3em;
+  grid-template-areas: ". . home home . ."
+    ". . . top . ."
+    ". left left right right ."
+    "page2 page2 . . page3 page3";
+}
+.sitemap > div {
+
+  text-align: center;
+
+}
+.sm-home {
+  grid-area: home;
+  background-color: #999;
+  line-height: 3em;
+}
+.sm-page2 {
+  grid-area: page2;
+  background-color: #999;
+  line-height: 3em;
+}
+.sm-page3 {
+  grid-area: page3;
+  background-color: #999;
+  line-height: 3em;
+}
+
+.top {
+  grid-area: top;
+  border-left: 1px solid;
+}
+
+.left {
+  grid-area: left;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.right {
+  grid-area: right;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
